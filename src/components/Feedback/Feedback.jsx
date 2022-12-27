@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid'
 export const Feedback = ({ options, plusFeedback }) => (
     <div>
         {options.map(option => (
-            <button key={nanoid(5)} className={css.feedbackBtn} onClick={() => plusFeedback(option)}>
+            <button name={option} key={nanoid(5)} className={css.feedbackBtn} onClick={() => plusFeedback(option)}>
                 {option}
             </button>
         ))}
