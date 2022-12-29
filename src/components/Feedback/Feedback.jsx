@@ -2,14 +2,17 @@ import propTypes from 'prop-types';
 import css from './Feedback.module.css';
 import { nanoid } from 'nanoid'
 
-export const Feedback = ({ options, plusFeedback }) => (
-    <div>
+export const Feedback = ({ options, onFeedback }) => (
+    <>
         {options.map(option => (
-            <button name={option} key={nanoid(5)} className={css.feedbackBtn} onClick={() => plusFeedback(option)}>
-                {option}
-            </button>
+            
+                <button name={option} key={nanoid(5)} className={css.feedbackBtn} onClick={onFeedback}>
+                {option[0].toUpperCase() + option.substring(1)}
+                </button>
+            
+            
         ))}
-    </div>
+    </>
 );
 
 Feedback.propTypes = {
